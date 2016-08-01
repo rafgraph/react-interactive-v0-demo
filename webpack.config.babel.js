@@ -5,6 +5,7 @@ export default {
   entry: './index.jsx',
   output: {
     path: `${__dirname}/__build__`,
+    publicPath: '/__build__/',
     filename: 'bundle.js',
   },
   module: {
