@@ -2,6 +2,8 @@ import React from 'react';
 import Interactive from '../../react-interactive-component/src/index';
 import style from './app.style';
 
+import LinkExample from './LinkExample';
+
 function App() {
   return (
     <div style={style.root}>
@@ -18,7 +20,7 @@ function App() {
         // style={style.link.style}
       >https://github.com/rafrex/react-interactive</Interactive></div>
 
-      <Interactive as="div" hover={{ color: 'green' }}>Interactive component</Interactive>
+      <LinkExample />
 
       <div style={style.creditLine}>{'Code and concept by '}
         <Interactive
