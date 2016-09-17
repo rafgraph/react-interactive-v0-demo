@@ -34,6 +34,11 @@ export default {
       borderBottom: '1px dashed rgb(0, 168, 0)',
       color: 'black',
     },
+    focus: {
+      outline: '2px solid yellow',
+      outlineOffset: '2px',
+      tabOnlyFocus: true,
+    },
   },
   repoLink: {
     margin: '-1px 1px 15px',
