@@ -35,9 +35,11 @@ export default {
       color: 'black',
     },
     focus: {
-      outline: '2px solid yellow',
-      outlineOffset: '2px',
-      tabOnlyFocus: true,
+      style: {
+        outline: '3px solid yellow',
+        outlineOffset: '1px',
+      },
+      focusFromTabOnly: true,
     },
   },
   repoLink: {
