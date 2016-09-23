@@ -8,21 +8,30 @@ function LinkExample() {
     <div style={style.root}>
       <h2 style={style.title}>Links</h2>
       <div style={style.subTitle}>
-        <code style={style.code}>hover</code> is green, <code style={style.code}>active</code> is
-        red, <code style={style.code}>touchActive</code> is blue
+        <div><code style={style.code}>hover</code> is green</div>
+        <div><code style={style.code}>hoverActive</code> is red</div>
+        <div><code style={style.code}>touchActive</code> is blue</div>
+        <div><code style={style.code}>keyActive</code> is orange</div>
       </div>
-      <div><Interactive
-        as="a"
-        href="http://react-interactive.rafrex.com/"
-        {...style.link}
-      ><code style={style.code}>as="a"</code> anchor tag link to this site</Interactive></div>
-      <div><Interactive
-        as={Link}
-        to="/"
-        {...style.link}
-      ><code style={style.code}>{'as={Link}'}</code> React Router Link
-        component <code style={style.code}>to="/"</code>
-      </Interactive></div>
+
+      <div style={style.linkWrapper}>
+        <Interactive
+          as="a"
+          href="#"
+          // href="http://react-interactive.rafrex.com/"
+          {...style.link}
+        >Anchor tag link &ndash; <code style={style.code}>as="a" href="#"</code>
+        </Interactive>
+      </div>
+
+      <div style={style.linkWrapper}>
+        <Interactive
+          as={Link}
+          to="/"
+          {...style.link}
+        >React Router Link &ndash; <code style={style.code}>{'as={Link} to="/"'}</code>
+        </Interactive>
+      </div>
     </div>
   );
 }
