@@ -36,7 +36,7 @@ export default {
     },
     focus: {
       style: {
-        outline: '3px solid yellow',
+        outline: '2px solid rgb(0, 152, 0)',
         outlineOffset: '1px',
       },
       focusFromTabOnly: true,

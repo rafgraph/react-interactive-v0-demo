@@ -15,7 +15,10 @@ export default {
     keyActive: { color: 'orange' },
     style: { borderBottom: '1px dotted' },
     focus: {
-      style: { outline: '3px solid yellow' },
+      style: {
+        outline: '2px solid rgb(0, 152, 0)',
+        outlineOffset: '1px',
+      },
       focusFromTabOnly: true,
     },
   },
