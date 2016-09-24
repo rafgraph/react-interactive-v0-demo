@@ -3,6 +3,7 @@ import Interactive from '../../react-interactive-component/src/index';
 import style from './app.style';
 
 import LinkExample from './LinkExample';
+import InputExample from './InputExample';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       >https://github.com/rafrex/react-interactive</Interactive></div>
 
       <LinkExample />
+      <InputExample />
 
       <div style={style.creditLine}>{'Code and concept by '}
         <Interactive
