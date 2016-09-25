@@ -26,7 +26,7 @@ export default {
         outline: '2px solid rgb(0, 152, 0)',
         outlineOffset: '1px',
       },
-      focusFromTabOnly: true,
+      focusFromOnly: 'tab',
     },
   },
   linkWrapper: { margin: '4px 0' },
