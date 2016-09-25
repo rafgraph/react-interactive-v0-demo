@@ -28,7 +28,7 @@ class TextInput extends React.Component {
     this.setState({ focus: false });
   }
   handleChange = (e) => {
-    this.setState({ value: e.value });
+    this.setState({ value: e.target.value });
   }
 
   render() {
