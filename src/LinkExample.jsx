@@ -1,35 +1,35 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Interactive from '../../react-interactive-component/src/index';
-import style from './linkExample.style';
+import s from './linkExample.style';
 
 function LinkExample() {
   return (
-    <div style={style.root}>
-      <h2 style={style.title}>Links</h2>
-      <div style={style.subTitle}>
-        <div><code style={style.code}>hover</code> is green</div>
-        <div><code style={style.code}>hoverActive</code> is red</div>
-        <div><code style={style.code}>touchActive</code> is blue</div>
-        <div><code style={style.code}>keyActive</code> is orange</div>
+    <div style={s.root}>
+      <h2 style={s.title}>Links</h2>
+      <div style={s.subTitle}>
+        <div>{s.code('hover')} is green</div>
+        <div>{s.code('hoverActive')} is red</div>
+        <div>{s.code('touchActive')} is blue</div>
+        <div>{s.code('keyActive')} is orange</div>
       </div>
 
-      <div style={style.linkWrapper}>
+      <div style={s.linkWrapper}>
         <Interactive
           as="a"
           href="#"
           // href="http://react-interactive.rafrex.com/"
-          {...style.link}
-        >Anchor tag link &ndash; <code style={style.code}>as="a" href="#"</code>
+          {...s.link}
+        >Anchor tag link &ndash; {s.code('as="a" href="#"')}
         </Interactive>
       </div>
 
-      <div style={style.linkWrapper}>
+      <div style={s.linkWrapper}>
         <Interactive
           as={Link}
           to="/"
-          {...style.link}
-        >React Router Link &ndash; <code style={style.code}>{'as={Link} to="/"'}</code>
+          {...s.link}
+        >React Router Link &ndash; {s.code('as={Link} to="/"')}
         </Interactive>
       </div>
     </div>

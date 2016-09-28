@@ -1,36 +1,31 @@
-export default {
-  root: {
-    marginBottom: '15px',
+import style from './style.section';
+
+const s = Object.create(style);
+
+s.title = {
+  ...s.title,
+  marginBottom: '1px',
+};
+
+s.subTitle = {
+  ...s.subTitle,
+  margin: '0 0 5px',
+};
+
+s.link = {
+  ...s.iStyles,
+  style: {
+    ...s.link,
+    borderBottom: '1px dotted',
   },
-  title: {
-    fontSize: '18px',
-    marginBottom: '1px',
-  },
-  subTitle: {
-    fontSize: '15px',
-    color: 'rgb(128, 128, 128)',
-    margin: '0 0 5px',
-  },
-  link: {
-    hover: { color: 'green' },
-    hoverActive: { color: 'red' },
-    touchActive: { color: 'blue' },
-    keyActive: { color: 'orange' },
+  focus: {
     style: {
-      borderBottom: '1px dotted',
-      msTouchAction: 'manipulation',
-      touchAction: 'manipulation',
+      ...s.iStyles.focus,
     },
-    focus: {
-      style: {
-        outline: '2px solid rgb(0, 152, 0)',
-        outlineOffset: '1px',
-      },
-      focusFromOnly: 'tab',
-    },
-  },
-  linkWrapper: { margin: '4px 0' },
-  code: {
-    fontFamily: 'monospace',
+    focusFromOnly: 'tab',
   },
 };
+
+s.linkWrapper = { margin: '4px 0' };
+
+export default s;

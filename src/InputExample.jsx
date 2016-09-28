@@ -1,11 +1,11 @@
 import React from 'react';
 import Interactive from '../../react-interactive-component/src/index';
-import style from './inputExample.style';
+import s from './inputExample.style';
 
 function InputExample() {
   return (
-    <div style={style.root}>
-      <h2 style={style.title}>Input</h2>
+    <div style={s.root}>
+      <h2 style={s.title}>Input</h2>
       <TextInput />
     </div>
   );
@@ -37,19 +37,17 @@ class TextInput extends React.Component {
         <Interactive
           as="input"
           type="text"
-          hover={style.input.hover}
-          active="hover"
+          value={this.state.value}
+          onChange={this.handleChange}
+          {...s.input} // provides style, hover, and active props
           focus={{
-            style: style.input.focus,
+            style: s.input.focus,
             onEnter: this.handleEnterFocus,
             onLeave: this.handleLeaveFocus,
           }}
-          style={style.input.style}
-          value={this.state.value}
-          onChange={this.handleChange}
         />
         {this.state.focus &&
-          <span style={style.focusInstructions}>This has foucs for typing</span>
+          <span style={s.focusInstructions}>This has foucs for typing</span>
         }
       </div>
     );
