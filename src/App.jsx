@@ -4,6 +4,7 @@ import s from './app.style';
 
 import LinkExample from './LinkExample';
 import InputExample from './InputExample';
+import StateLogExample from './StateLogExample';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
 
       <LinkExample />
       <InputExample />
+      <StateLogExample />
 
       <div style={s.creditLine}>{'Code and concept by '}
         <Interactive
