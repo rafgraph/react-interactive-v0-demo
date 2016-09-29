@@ -6,6 +6,7 @@ import LinkExample from './LinkExample';
 import InputExample from './InputExample';
 import StateLogExample from './StateLogExample';
 import ConsoleLogExample from './ConsoleLogExample';
+import TabThroughPage from './TabThroughPage';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
       <InputExample />
       <StateLogExample />
       <ConsoleLogExample />
+      <TabThroughPage />
 
       <div style={s.creditLine}>{'Code and concept by '}
         <Interactive
