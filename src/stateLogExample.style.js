@@ -122,4 +122,6 @@ s.toggleLogLink = {
   },
 };
 
+const buttonStyle = s.button;
+export { buttonStyle };
 export default s;
