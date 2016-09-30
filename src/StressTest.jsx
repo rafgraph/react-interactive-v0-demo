@@ -8,13 +8,29 @@ class StressTest extends React.Component {
     super();
     this.state = {
       showStressTest: false,
-      loading: false,
+      batches: 0,
     };
-    this.endLoadingTime = new Date();
+    this.maxBatches = 25;
   }
 
   toggleStressTest = (cb) => {
-    this.setState({ showStressTest: !this.state.showStressTest }, cb);
+    if (this.state.showStressTest) {
+      this.setState({ showStressTest: false, batches: 0 }, cb);
+    } else {
+      this.batch(cb);
+    }
+  }
+
+  batch(cb) {
+    // batch asychrounsly so the creation of 500 divs is non-blocking and
+    // the browser can execute other stuff in the callback queue,
+    // note that the setTimeout is required b/t each setState call batch
+    setTimeout(() => {
+      this.setState(
+        { showStressTest: true, batches: this.state.batches + 1 },
+        () => { this.state.batches === this.maxBatches ? cb() : this.batch(cb); }
+      );
+    }, 0);
   }
 
   render() {
@@ -23,18 +39,19 @@ class StressTest extends React.Component {
         <h2 style={s.title}>Stress Test</h2>
         {' '}&ndash;{' '}
         <ToggleTest
-          testShown={this.state.showStressTest}
+          testShown={this.state.batches === this.maxBatches}
           toggleStressTest={this.toggleStressTest}
         />
         {this.state.showStressTest &&
-          Object.keys(new Int8Array(500)).map(Number).map((idx) =>
-            <Item key={idx} itemNumber={idx} />
+          Object.keys(new Int8Array(this.state.batches)).map(Number).map((idx) =>
+            <Batch key={idx} batchNumber={idx + 1} />
           )
         }
       </div>
     );
   }
 }
+
 
 class ToggleTest extends React.Component {
   static propTypes = {
@@ -44,42 +61,16 @@ class ToggleTest extends React.Component {
   constructor() {
     super();
     this.state = {
-      // testShown: false,
       loading: false,
     };
-    this.endLoadingTime = new Date();
   }
 
   toggleStressTest = () => {
-    // ignore click events that happen while loading:
-    // note that while the single thread is occupied by creating 500 divs (ReactElements),
-    // click events are queued (from physical clicks) and register after the stack is clear,
-    // they usually land on the 'rendering...' span which doesn't have a click handler (good),
-    // but sometimes the toggle link will be re-rendered before the click queue is empty
-    // so some of the clicks will call this.toggleStressTest, so ignore the click events
-    // for the first 300ms after 'rendering...' finishes
-    if (new Date() - this.endLoadingTime < 300) {
-      return;
-    }
-
     this.setState({ loading: true },
       () => {
-        // even though props.toggleStressTest isn't called until after setState finishes,
-        // the actual updating of the DOM appears to be async (after setState), so wait 50
-        // for DOM to update (show rendering...) before calling props.toggleStressTest
-        // (which occupies the single thread while the 500 divs (ReactElements) are created)
-        setTimeout(() => {
-          this.props.toggleStressTest(() => {
-            // set end time and call setState async b/c there is a linear time gap
-            // (based on number of divs rendered) b/t when this callback is called
-            // and when setState is executed, (maybe some clean up related to the 500 divs,
-            // b/c this cb is called after the show/hide 500 divs setState call)
-            setTimeout(() => {
-              this.endLoadingTime = new Date();
-              this.setState({ loading: false });
-            }, 0);
-          });
-        }, 50);
+        this.props.toggleStressTest(() => {
+          this.setState({ loading: false });
+        });
       }
     );
   }
@@ -97,7 +88,7 @@ class ToggleTest extends React.Component {
       <span
         style={s.loading}
         focus={{}} // add blank focus prop so RI treats it as focusable
-      >{this.props.testShown ? 'removing...' : 'rendering...'}</span>
+      >{'rendering...'}</span>
     );
     return (
       <Interactive
@@ -106,6 +97,26 @@ class ToggleTest extends React.Component {
     );
   }
 }
+
+
+class Batch extends React.Component {
+  static propTypes = {
+    batchNumber: PropTypes.number,
+  }
+  shouldComponentUpdate() {
+    return false;
+  }
+  render() {
+    return (
+      <div>
+        {Object.keys(new Int8Array(20)).map(Number).map((idx) =>
+          <Item key={idx} itemNumber={idx + ((this.props.batchNumber - 1) * 20)} />
+        )}
+      </div>
+    );
+  }
+}
+
 
 class Item extends React.Component {
   static propTypes = {
