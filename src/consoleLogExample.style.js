@@ -11,7 +11,6 @@ s.title = {
 s.info = {
   fontSize: '15px',
   color: 'rgb(128, 128, 128)',
-  margin: '0 0 5px',
 };
 s.code = (content) => (
   Object.getPrototypeOf(s).code(content, {
