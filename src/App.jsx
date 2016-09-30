@@ -7,6 +7,7 @@ import InputExample from './InputExample';
 import StateLogExample from './StateLogExample';
 import ConsoleLogExample from './ConsoleLogExample';
 import TabThroughPage from './TabThroughPage';
+import StressTest from './StressTest';
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
       <StateLogExample />
       <ConsoleLogExample />
       <TabThroughPage />
+      <StressTest />
 
       <div style={s.creditLine}>{'Code and concept by '}
         <Interactive
