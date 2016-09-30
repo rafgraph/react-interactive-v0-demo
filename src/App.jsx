@@ -6,6 +6,7 @@ import LinkExample from './LinkExample';
 import InputExample from './InputExample';
 import StateLogExample from './StateLogExample';
 import ConsoleLogExample from './ConsoleLogExample';
+import ShowOnExample from './ShowOnExample';
 import TabThroughPage from './TabThroughPage';
 import StressTest from './StressTest';
 
@@ -29,6 +30,7 @@ function App() {
       <InputExample />
       <StateLogExample />
       <ConsoleLogExample />
+      <ShowOnExample />
       <TabThroughPage />
       <StressTest />
 
