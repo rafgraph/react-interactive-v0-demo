@@ -1,5 +1,5 @@
 import style from './style.section';
-import { buttonStyle } from './stateLogExample.style';
+import button from './style.button';
 
 const s = Object.create(style);
 
@@ -18,6 +18,6 @@ s.code = (content) => (
   })
 );
 
-s.button = buttonStyle;
+s.button = button;
 
 export default s;

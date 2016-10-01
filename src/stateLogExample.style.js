@@ -1,4 +1,5 @@
 import style from './style.section';
+import button from './style.button';
 
 const s = Object.create(style);
 
@@ -7,49 +8,7 @@ s.title = {
   marginBottom: '8px',
 };
 
-s.button = {
-  style: {
-    height: '40px',
-    lineHeight: '38px',
-    fontSize: '18px',
-    textAlign: 'center',
-    WebkitUserSelect: 'none',
-    MozUserSelect: 'none',
-    msUserSelect: 'none',
-    userSelect: 'none',
-  },
-  normal: {
-    ...s.iStyles.normal,
-    border: '1px solid',
-    // have to explicitly add border color b/c browsers only
-    // sometimes use the `color` property for the border color
-    borderColor: s.iStyles.normal.color,
-  },
-  hover: {
-    ...s.iStyles.hover,
-    border: '1px solid',
-    borderColor: s.iStyles.hover.color,
-  },
-  hoverActive: {
-    ...s.iStyles.hoverActive,
-    border: '1px solid',
-    borderColor: s.iStyles.hoverActive.color,
-  },
-  touchActive: {
-    ...s.iStyles.touchActive,
-    border: '1px solid',
-    borderColor: s.iStyles.touchActive.color,
-  },
-  keyActive: {
-    ...s.iStyles.keyActive,
-    border: '1px solid',
-    borderColor: s.iStyles.keyActive.color,
-  },
-  focus: {
-    ...s.iStyles.focus,
-    outline: '3px solid lightblue',
-  },
-};
+s.button = button;
 
 s.focusFrom = {
   fontSize: '12px',
@@ -122,6 +81,4 @@ s.toggleLogLink = {
   },
 };
 
-const buttonStyle = s.button;
-export { buttonStyle };
 export default s;
