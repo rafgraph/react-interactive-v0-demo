@@ -29,9 +29,9 @@ function App() {
       <LinkExample />
       <InputExample />
       <StateLogExample />
-      <ConsoleLogExample />
       <ShowOnExample />
       <TabThroughPage />
+      <ConsoleLogExample />
       <StressTest />
 
       <div style={s.creditLine}>{'Code and concept by '}
