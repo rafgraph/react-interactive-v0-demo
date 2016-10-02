@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
-import Interactive from '../../react-interactive-component/src/index';
+import Interactive from '../../../react-interactive-component/src/index';
 import s from './linkExample.style';
 
 function LinkExample() {

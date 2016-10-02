@@ -1,4 +1,4 @@
-import style from './style.section';
+import style from '../styles/section.style';
 
 const s = Object.create(style);
 

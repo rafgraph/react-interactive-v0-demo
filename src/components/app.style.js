@@ -1,4 +1,4 @@
-import style from './style.jsx';
+import style from '../styles/style';
 
 const s = Object.create(style);
 

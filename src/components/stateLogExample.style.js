@@ -1,5 +1,5 @@
-import style from './style.section';
-import button from './style.button';
+import style from '../styles/section.style';
+import button from '../styles/button.style';
 
 const s = Object.create(style);
 
