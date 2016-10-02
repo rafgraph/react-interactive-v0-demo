@@ -21,37 +21,27 @@ s.infoText = {
   fontSize: '15px',
 };
 
-s.infoSVG = {
+s.infoButton = {
   style: {
     left: 'calc(50% - 25px)',
     position: 'relative',
-    width: '32px',
-    height: '32px',
     fill: 'rgb(128, 128, 128)',
-    paddingLeft: '1px',
-    paddingBottom: '1px',
-    marginLeft: '-1px',
     WebkitUserSelect: 'none',
     MozUserSelect: 'none',
     msUserSelect: 'none',
     userSelect: 'none',
   },
-  shownStyle: {
-    fill: 'black',
+  hover: { fill: 'black' },
+  hoverActive: { fill: 'black' },
+  touchActive: { fill: 'black' },
+  focus: {
+    focusFromTabStyle: { fill: 'black' },
   },
 };
 
-s.infoButton = {
-  hover: s.infoSVG.shownStyle,
-  hoverActive: s.infoSVG.shownStyle,
-  touchActive: s.infoSVG.shownStyle,
-  focus: {
-    focusFromTabStyle: {
-      ...s.infoSVG.shownStyle,
-      outline: '2px solid rgb(128, 128, 128)',
-      outlineOffset: '-5px',
-    },
-  },
+s.svg = {
+  width: '32px',
+  height: '32px',
 };
 
 export default s;
