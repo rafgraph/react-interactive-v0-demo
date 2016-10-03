@@ -2,6 +2,7 @@ import style from '../styles/section.style';
 import button from '../styles/button.style';
 
 const s = Object.create(style);
+s.button = Object.create(button);
 
 s.title = {
   ...s.title,
@@ -18,6 +19,5 @@ s.code = (content) => (
   })
 );
 
-s.button = button;
 
 export default s;

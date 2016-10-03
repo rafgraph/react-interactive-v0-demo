@@ -2,13 +2,12 @@ import style from '../styles/section.style';
 import button from '../styles/button.style';
 
 const s = Object.create(style);
+s.button = Object.create(button);
 
 s.title = {
   ...s.title,
   marginBottom: '8px',
 };
-
-s.button = button;
 
 s.focusFrom = {
   fontSize: '12px',
