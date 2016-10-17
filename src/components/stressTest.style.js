@@ -11,7 +11,7 @@ s.title = {
 s.create500Items = {
   style: {
     fontSize: '15px',
-    borderBottom: '1px dotted',
+    textDecoration: 'underline',
   },
   ...s.iStyles,
   normal: {

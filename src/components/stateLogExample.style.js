@@ -63,9 +63,9 @@ s.codeWithSize = (content) => (
 s.toggleLogLink = {
   style: {
     fontSize: '14px',
-    margin: '4px',
+    padding: '4px',
     display: 'inline-block',
-    borderBottom: '1px dotted',
+    textDecoration: 'underline',
   },
   ...s.iStyles,
   normal: {
@@ -75,6 +75,7 @@ s.toggleLogLink = {
     focusFromOnly: 'tab',
     style: {
       ...s.button.focus,
+      outlineOffset: '-3px',
       color: 'black',
     },
   },

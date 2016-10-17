@@ -11,11 +11,13 @@ s.link = {
   ...s.iStyles,
   style: {
     ...s.link,
-    borderBottom: '1px dotted',
+    textDecoration: 'underline',
+    padding: '2px',
   },
   focus: {
     style: {
       ...s.iStyles.focus,
+      outlineOffset: '-1px',
     },
     focusFromOnly: 'tab',
   },
