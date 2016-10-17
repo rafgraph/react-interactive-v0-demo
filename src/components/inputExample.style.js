@@ -4,7 +4,7 @@ const s = Object.create(style);
 
 s.title = {
   ...s.title,
-  marginBottom: '5px',
+  marginBottom: '8px',
 };
 
 s.input = {
@@ -20,8 +20,13 @@ s.input = {
   },
   hover: { border: '1px solid rgb(0, 152, 0)' },
   active: 'hover',
+  touchActive: { border: '1px solid blue' },
   focus: {
     outline: '2px solid rgb(0, 152, 0)',
+    outlineOffset: '-1px',
+  },
+  focusFromTouchStyle: {
+    outline: '2px solid blue',
     outlineOffset: '-1px',
   },
 };

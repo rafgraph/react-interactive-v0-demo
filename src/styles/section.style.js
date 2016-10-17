@@ -3,11 +3,12 @@ import style from './style';
 const section = Object.create(style);
 
 section.root = {
-  marginBottom: '15px',
+  marginBottom: '30px',
 };
 
 section.title = {
   fontSize: '18px',
+  marginBottom: '5px',
 };
 
 section.subTitle = {

@@ -2,11 +2,6 @@ import style from '../styles/section.style';
 
 const s = Object.create(style);
 
-s.title = {
-  ...s.title,
-  marginBottom: '1px',
-};
-
 s.subTitle = {
   ...s.subTitle,
   margin: '0 0 5px',

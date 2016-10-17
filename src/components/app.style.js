@@ -6,7 +6,7 @@ s.root = {
   maxWidth: '340px',
   padding: '10px 15px 25px',
   margin: '0 auto',
-  fontFamily: 'helvetica neue, helvetica, sans-serif',
+  fontFamily: 'helvetica, sans-serif',
   fontWeight: '300',
   fontSize: '16px',
   letterSpacing: '0.025em',
@@ -47,7 +47,7 @@ s.link = {
 };
 
 s.repoLink = {
-  margin: '-1px 1px 15px',
+  margin: '-1px 1px 25px',
 };
 
 s.creditLine = {

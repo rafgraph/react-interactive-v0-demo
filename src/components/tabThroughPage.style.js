@@ -4,7 +4,7 @@ const s = Object.create(style);
 
 s.title = {
   ...s.title,
-  paddingBottom: '4px',
+  marginBottom: '7px',
 };
 
 s.list = {

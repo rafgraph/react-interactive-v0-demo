@@ -2,14 +2,15 @@ import style from '../styles/section.style';
 
 const s = Object.create(style);
 
-s.title = {
-  ...s.title,
-  marginBottom: '0px',
+s.root = {
+  ...s.root,
+  marginBottom: '15px',
 };
 
 s.infoBox = {
   height: '20px',
   textAlign: 'center',
+  marginBottom: '7px',
 };
 
 s.subTitle = {

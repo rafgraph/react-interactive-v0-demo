@@ -6,7 +6,7 @@ s.button = Object.create(button);
 
 s.title = {
   ...s.title,
-  marginBottom: '8px',
+  marginBottom: '10px',
   display: 'inline-block',
 };
 s.info = {
