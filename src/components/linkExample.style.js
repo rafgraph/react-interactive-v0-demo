@@ -23,6 +23,12 @@ s.link = {
   },
 };
 
+s.code = (content) => (
+  Object.getPrototypeOf(s).code(content, {
+    textDecoration: 'none',
+  })
+);
+
 s.linkWrapper = { margin: '4px 0' };
 
 export default s;
