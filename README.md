@@ -1,3 +1,3 @@
-# Example site for React Interactive
+# Example Site for React Interactive
 
 http://react-interactive.rafrex.com
