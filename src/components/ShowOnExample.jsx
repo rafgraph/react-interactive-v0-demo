@@ -1,5 +1,5 @@
 import React from 'react';
-import Interactive from '../../../react-interactive-component/src/index';
+import Interactive from 'react-interactive';
 import s from './showOnExample.style';
 
 // show on: hover, touchActive and focusFromTab (includes hoverActive)
