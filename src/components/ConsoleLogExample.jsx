@@ -35,17 +35,14 @@ class ConsoleLogExample extends React.Component {
   handleMouseClick = (e) => {
     e.persist();
     console.log('onMouseClick:', e);
-    console.log('');
   }
   handleEnterKey = (e) => {
     e.persist();
     console.log('onEnterKey:', e);
-    console.log('');
   }
   handleTap = (e) => {
     e.persist();
     console.log('onTap:', e);
-    console.log('');
   }
   render() {
     return (
