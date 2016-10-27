@@ -41,8 +41,8 @@ class TextInput extends React.Component {
           onChange={this.handleChange}
           {...s.input} // provides style, hover, and active props
           focus={{
-            style: s.input.focus,
-            focusFromTouchStyle: s.input.focusFromTouchStyle,
+            style: s.input.focus.style,
+            focusFromTouchStyle: s.input.focus.focusFromTouchStyle,
             onEnter: this.handleEnterFocus,
             onLeave: this.handleLeaveFocus,
           }}

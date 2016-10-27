@@ -22,12 +22,14 @@ s.input = {
   active: 'hover',
   touchActive: { border: '1px solid blue' },
   focus: {
-    outline: '2px solid rgb(0, 152, 0)',
-    outlineOffset: '-1px',
-  },
-  focusFromTouchStyle: {
-    outline: '2px solid blue',
-    outlineOffset: '-1px',
+    style: {
+      outline: '2px solid rgb(0, 152, 0)',
+      outlineOffset: '-1px',
+    },
+    focusFromTouchStyle: {
+      outline: '2px solid blue',
+      outlineOffset: '-1px',
+    },
   },
 };
 
