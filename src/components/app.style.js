@@ -39,10 +39,9 @@ s.link = {
     color: 'black',
   },
   focus: {
-    style: {
+    focusFromTabStyle: {
       ...s.iStyles.focus,
     },
-    focusFromOnly: 'tab',
   },
 };
 

@@ -72,8 +72,7 @@ s.toggleLogLink = {
     color: 'gray',
   },
   focus: {
-    focusFromOnly: 'tab',
-    style: {
+    focusFromTabStyle: {
       ...s.button.focus,
       outlineOffset: '-3px',
       color: 'black',
