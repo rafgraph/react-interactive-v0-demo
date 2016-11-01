@@ -26,6 +26,7 @@ s.infoButton = {
   style: {
     left: 'calc(50% - 25px)',
     position: 'relative',
+    display: 'inline-block',
     fill: 'rgb(128, 128, 128)',
     WebkitUserSelect: 'none',
     MozUserSelect: 'none',
