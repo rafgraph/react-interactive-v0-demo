@@ -15,29 +15,31 @@ class StateLogExample extends React.Component {
     this.track = { log: this.state.log };
     this.logId = 1;
     this.queue = [];
-    this.mostRecentOnStateChangeIndex = undefined;
     this.onStateChangeCount = 1;
   }
 
-  handleOnStateChange = ({ nextState }) => {
+  handleOnStateChange = ({ prevState, nextState }) => {
     this.setState(nextState);
     this.queue.push({
       logId: this.logId++,
       stateChangeNumber: this.onStateChangeCount,
-      changes: [],
+      changes: (() => {
+        const changes = [];
+        if (prevState.iState !== nextState.iState) {
+          changes.push(this.createEnterLeaveStateLine('Leave', prevState.iState));
+          changes.push(this.createEnterLeaveStateLine('Enter', nextState.iState));
+        }
+        if (prevState.focus !== nextState.focus) {
+          changes.push(this.createEnterLeaveStateLine(
+            nextState.focus ? 'Enter' : 'Leave',
+            'focus',
+            nextState.focus ? nextState.focusFrom : prevState.focusFrom
+          ));
+        }
+        return changes;
+      })(),
     });
     this.onStateChangeCount++;
-    this.mostRecentOnStateChangeIndex = this.queue.length - 1;
-  }
-  handleEnterState = (state, focusFrom) => {
-    this.queue[this.mostRecentOnStateChangeIndex].changes.push(
-      this.createEnterLeaveStateLine('Enter', state, focusFrom)
-    );
-  }
-  handleLeaveState = (state, focusFrom) => {
-    this.queue[this.mostRecentOnStateChangeIndex].changes.push(
-      this.createEnterLeaveStateLine('Leave', state, focusFrom)
-    );
   }
   handleSetStateCallback = () => {
     this.printLog();
@@ -93,12 +95,11 @@ class StateLogExample extends React.Component {
   }
   toggleLog = (e) => {
     if (e.type === 'keydown') this.focusLog = true;
-    this.forceShowHideNormal = true;
     this.setState(
       { showLog: !this.state.showLog },
       () => {
         this.focusLog = false;
-        this.forceShowHideNormal = false;
+        if (!this.state.showLog) this.logNode = null;
       });
   }
   handleLogRef = (node) => {
@@ -112,36 +113,13 @@ class StateLogExample extends React.Component {
         <Interactive
           as="div"
           style={s.button.style}
-          normal={{
-            style: s.button.normal,
-            onEnter: this.handleEnterState,
-            onLeave: this.handleLeaveState,
-          }}
-          hover={{
-            style: s.button.hover,
-            onEnter: this.handleEnterState,
-            onLeave: this.handleLeaveState,
-          }}
-          hoverActive={{
-            style: s.button.hoverActive,
-            onEnter: this.handleEnterState,
-            onLeave: this.handleLeaveState,
-          }}
-          touchActive={{
-            style: s.button.touchActive,
-            onEnter: this.handleEnterState,
-            onLeave: this.handleLeaveState,
-          }}
-          keyActive={{
-            style: s.button.keyActive,
-            onEnter: this.handleEnterState,
-            onLeave: this.handleLeaveState,
-          }}
-          focus={{
-            style: s.button.focus,
-            onEnter: this.handleEnterState,
-            onLeave: this.handleLeaveState,
-          }}
+          normal={s.button.normal}
+          hover={s.button.hover}
+          hoverActive={s.button.hoverActive}
+          touchActive={s.button.touchActive}
+          keyActive={s.button.keyActive}
+          focus={s.button.focus}
+
           onStateChange={this.handleOnStateChange}
           setStateCallback={this.handleSetStateCallback}
           onClick={this.handleClick}
@@ -170,9 +148,7 @@ class StateLogExample extends React.Component {
             style={s.logStyle}
             touchActive={{}} // so RI will turn off webkitTapHighlightColor
             refDOMNode={this.handleLogRef}
-            focus={{
-              focusFromTabStyle: s.button.focus,
-            }}
+            focus={{ focusFromTabStyle: s.button.focus }}
             initialState={{ focus: this.focusLog }}
           >
             {
@@ -198,7 +174,6 @@ class StateLogExample extends React.Component {
           as="span"
           onClick={this.toggleLog}
           {...s.toggleLogLink}
-          forceState={this.forceShowHideNormal ? { iState: 'normal' } : null}
         >{this.state.showLog ? 'hide log' : 'show log'}</Interactive>
       </div>
     );
