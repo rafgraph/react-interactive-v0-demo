@@ -133,9 +133,6 @@ class Item extends React.Component {
   handleOnStateChange = ({ nextState }) => {
     this.setState(nextState);
   }
-  handleLeaveFocus = () => {
-    this.setState({ forceNormal: true }, this.setState.bind(this, { forceNormal: false }));
-  }
 
   numberMapping = {
     42: 'Todo 42: Read The Hitchhiker\'s Guide to the Galaxy',
@@ -151,11 +148,7 @@ class Item extends React.Component {
         onStateChange={this.handleOnStateChange}
         tabIndex="0"
         {...s.item}
-        focus={{
-          focusFromTabStyle: s.item.focus,
-          onLeave: this.handleLeaveFocus,
-        }}
-        forceState={(this.state.forceNormal && { iState: 'normal' }) || null}
+        focus={{ focusFromTabStyle: s.item.focus }}
       >
         <div>
           {s.code('div')} number {this.props.itemNumber + 1}
