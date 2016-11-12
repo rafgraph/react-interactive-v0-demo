@@ -12,12 +12,6 @@ class ConsoleLogExample extends React.Component {
       focusFrom: undefined,
     };
   }
-  handleEnterState = (state, focusFrom) => {
-    console.log('onEnter:', state, focusFrom || '');
-  }
-  handleLeaveState = (state, focusFrom) => {
-    console.log('onLeave:', state, focusFrom || '');
-  }
   handleOnStateChange = (changes) => {
     changes.event.persist();
     console.log('onStateChange:', changes);
@@ -64,38 +58,26 @@ class ConsoleLogExample extends React.Component {
           normal={{
             style: s.button.normal,
             className: 'normal-state',
-            onEnter: this.handleEnterState,
-            onLeave: this.handleLeaveState,
           }}
           hover={{
             style: s.button.hover,
             className: 'hover-state',
-            onEnter: this.handleEnterState,
-            onLeave: this.handleLeaveState,
           }}
           hoverActive={{
             style: s.button.hoverActive,
             className: 'hover-active-state',
-            onEnter: this.handleEnterState,
-            onLeave: this.handleLeaveState,
           }}
           touchActive={{
             style: s.button.touchActive,
             className: 'touch-active-state',
-            onEnter: this.handleEnterState,
-            onLeave: this.handleLeaveState,
           }}
           keyActive={{
             style: s.button.keyActive,
             className: 'key-active-state',
-            onEnter: this.handleEnterState,
-            onLeave: this.handleLeaveState,
           }}
           focus={{
             style: s.button.focus,
             className: 'focus-state',
-            onEnter: this.handleEnterState,
-            onLeave: this.handleLeaveState,
           }}
           onStateChange={this.handleOnStateChange}
           setStateCallback={this.handleSetStateCallback}
