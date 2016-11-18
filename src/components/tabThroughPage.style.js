@@ -20,7 +20,7 @@ s.listItem = {
 s.code = (contents, tb12) => (
   Object.getPrototypeOf(s).code(
     tb12 ? 'Tom Brady' : contents,
-    tb12 && { color: 'lightblue' }
+    tb12 && { color: 'lightblue' },
   )
 );
 
