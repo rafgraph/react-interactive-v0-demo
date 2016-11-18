@@ -21,22 +21,10 @@ class ConsoleLogExample extends React.Component {
     console.log('setStateCallback:', changes);
     console.log('');
   }
-  handleClick = (e) => {
+  handleClick = (e, clickType) => {
     e.persist();
-    console.log('onCick:', e);
+    console.log('onCick:', clickType, e);
     console.log('');
-  }
-  handleMouseClick = (e) => {
-    e.persist();
-    console.log('onMouseClick:', e);
-  }
-  handleEnterKey = (e) => {
-    e.persist();
-    console.log('onEnterKey:', e);
-  }
-  handleTap = (e) => {
-    e.persist();
-    console.log('onTap:', e);
   }
   render() {
     return (
@@ -82,9 +70,6 @@ class ConsoleLogExample extends React.Component {
           onStateChange={this.handleOnStateChange}
           setStateCallback={this.handleSetStateCallback}
           onClick={this.handleClick}
-          onMouseClick={this.handleMouseClick}
-          onEnterKey={this.handleEnterKey}
-          onTap={this.handleTap}
         >
           {s.code('console.log(...)')}
         </Interactive>
