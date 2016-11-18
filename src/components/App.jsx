@@ -24,6 +24,7 @@ function App() {
         // active={s.link.active}
         // touchActive={s.link.touchActive}
         // style={s.link.style}
+        touchActiveTapOnly
       >https://github.com/rafrex/react-interactive</Interactive></div>
 
       <LinkExample />
@@ -39,6 +40,7 @@ function App() {
           as="a"
           href="http://www.rafaelpedicini.com/"
           {...s.link}
+          touchActiveTapOnly
         >Rafael Pedicini</Interactive>
       </div>
     </div>
