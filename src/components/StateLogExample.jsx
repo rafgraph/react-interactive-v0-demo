@@ -3,6 +3,16 @@ import Interactive from '../../../react-interactive-component/src/index';
 import s from './stateLogExample.style';
 
 class StateLogExample extends React.Component {
+  static createEnterLeaveStateLine(transition, state, focusFrom) {
+    return (
+      <span style={s.changeStateLine}>
+        {` ${transition} `}
+        {s.codeWithSize(state)}
+        {focusFrom && <span> from {s.codeWithSize(focusFrom)}</span>}
+      </span>
+    );
+  }
+
   constructor() {
     super();
     this.state = {
@@ -22,45 +32,34 @@ class StateLogExample extends React.Component {
     this.setState(nextState);
     this.queue.push({
       logId: this.logId++,
-      stateChangeNumber: this.onStateChangeCount,
+      stateChangeNumber: this.onStateChangeCount++,
       changes: (() => {
         const changes = [];
         if (prevState.iState !== nextState.iState) {
-          changes.push(this.createEnterLeaveStateLine('Leave', prevState.iState));
-          changes.push(this.createEnterLeaveStateLine('Enter', nextState.iState));
+          changes.push(StateLogExample.createEnterLeaveStateLine('Leave', prevState.iState));
+          changes.push(StateLogExample.createEnterLeaveStateLine('Enter', nextState.iState));
         }
         if (prevState.focus !== nextState.focus) {
-          changes.push(this.createEnterLeaveStateLine(
+          changes.push(StateLogExample.createEnterLeaveStateLine(
             nextState.focus ? 'Enter' : 'Leave',
             'focus',
-            nextState.focus ? nextState.focusFrom : prevState.focusFrom
+            nextState.focus ? nextState.focusFrom : prevState.focusFrom,
           ));
         }
         return changes;
       })(),
     });
-    this.onStateChangeCount++;
   }
   handleSetStateCallback = () => {
     this.printLog();
-  }
-  createEnterLeaveStateLine(transition, state, focusFrom) {
-    return (
-      <span style={s.changeStateLine}>
-        {` ${transition} `}
-        {s.codeWithSize(state)}
-        {focusFrom && <span> from {s.codeWithSize(focusFrom)}</span>}
-      </span>
-    );
   }
   printLog() {
     this.track.log = this.track.log.concat(this.queue).slice(-15);
     this.setState(
       { log: this.track.log },
-      () => { this.logNode && this.scrollLogtoBottom(); }
+      () => { this.logNode && this.scrollLogtoBottom(); },
     );
     this.queue = [];
-    this.mostRecentOnStateChangeIndex = undefined;
   }
   scrollLogtoBottom() {
     this.logNode.scrollTop = this.logNode.scrollHeight;
@@ -72,29 +71,14 @@ class StateLogExample extends React.Component {
     });
     this.printLog();
   }
-  handleClick = () => {
-    this.logEvent('click');
-  }
-  handleMouseClick = () => {
-    this.logEvent('mouse click');
-  }
-  handleEnterKey = () => {
-    this.logEvent('enter key');
-  }
-  handleTap = () => {
-    this.logEvent('tap');
+  handleClick = (e, clickType) => {
+    this.logEvent(`click - ${clickType}`);
   }
   handleTapTwo = () => {
     this.logEvent('tap two');
   }
-  handleTapThree = () => {
-    this.logEvent('tap three');
-  }
-  handleTapFour = () => {
-    this.logEvent('tap four');
-  }
-  toggleLog = (e) => {
-    if (e.type === 'keydown') this.focusLog = true;
+  toggleLog = (e, clickType) => {
+    if (clickType === 'keyClick') this.focusLog = true;
     this.setState(
       { showLog: !this.state.showLog },
       () => {
@@ -123,12 +107,7 @@ class StateLogExample extends React.Component {
           onStateChange={this.handleOnStateChange}
           setStateCallback={this.handleSetStateCallback}
           onClick={this.handleClick}
-          onMouseClick={this.handleMouseClick}
-          onEnterKey={this.handleEnterKey}
-          onTap={this.handleTap}
           onTapTwo={this.handleTapTwo}
-          onTapThree={this.handleTapThree}
-          onTapFour={this.handleTapFour}
         >
           {s.code(this.state.iState)}
           {this.state.focus && (
@@ -174,6 +153,7 @@ class StateLogExample extends React.Component {
           as="span"
           onClick={this.toggleLog}
           {...s.toggleLogLink}
+          touchActiveTapOnly
         >{this.state.showLog ? 'hide log' : 'show log'}</Interactive>
       </div>
     );
