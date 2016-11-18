@@ -22,7 +22,7 @@ s.link = {
   },
 };
 
-s.code = (content) => (
+s.code = content => (
   Object.getPrototypeOf(s).code(content, {
     textDecoration: 'none',
   })
