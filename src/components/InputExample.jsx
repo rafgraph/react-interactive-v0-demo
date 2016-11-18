@@ -21,11 +21,8 @@ class TextInput extends React.Component {
     };
   }
 
-  handleEnterFocus = () => {
-    this.setState({ focus: true });
-  }
-  handleLeaveFocus = () => {
-    this.setState({ focus: false });
+  handleOnStateChange = ({ nextState }) => {
+    if (this.state.focus !== nextState.focus) this.setState({ focus: nextState.focus });
   }
   handleChange = (e) => {
     this.setState({ value: e.target.value });
@@ -39,13 +36,13 @@ class TextInput extends React.Component {
           type="text"
           value={this.state.value}
           onChange={this.handleChange}
+          onStateChange={this.handleOnStateChange}
           {...s.input} // provides style, hover, and active props
           focus={{
             style: s.input.focus.style,
             focusFromTouchStyle: s.input.focus.focusFromTouchStyle,
-            onEnter: this.handleEnterFocus,
-            onLeave: this.handleLeaveFocus,
           }}
+          touchActiveTapOnly
         />
         {this.state.focus &&
           <span style={s.focusInstructions}>This has foucs for typing</span>
