@@ -28,7 +28,7 @@ class StressTest extends React.Component {
     setTimeout(() => {
       this.setState(
         { showStressTest: true, batches: this.state.batches + 1 },
-        () => { this.state.batches === this.maxBatches ? cb() : this.batch(cb); }
+        () => { this.state.batches === this.maxBatches ? cb() : this.batch(cb); },
       );
     }, 0);
   }
@@ -43,9 +43,9 @@ class StressTest extends React.Component {
           toggleStressTest={this.toggleStressTest}
         />
         {this.state.showStressTest &&
-          Object.keys(new Int8Array(this.state.batches)).map(Number).map((idx) =>
+          Object.keys(new Int8Array(this.state.batches)).map(Number).map(idx => (
             <Batch key={idx} batchNumber={idx + 1} />
-          )
+          ))
         }
       </div>
     );
@@ -66,13 +66,11 @@ class ToggleTest extends React.Component {
   }
 
   toggleStressTest = () => {
-    this.setState({ loading: true },
-      () => {
-        this.props.toggleStressTest(() => {
-          this.setState({ loading: false });
-        });
-      }
-    );
+    this.setState({ loading: true }, () => {
+      this.props.toggleStressTest(() => {
+        this.setState({ loading: false });
+      });
+    });
   }
 
   render() {
@@ -93,6 +91,7 @@ class ToggleTest extends React.Component {
     return (
       <Interactive
         as={this.state.loading ? loading : toggleItems}
+        touchActiveTapOnly
       />
     );
   }
@@ -109,9 +108,9 @@ class Batch extends React.Component {
   render() {
     return (
       <div>
-        {Object.keys(new Int8Array(20)).map(Number).map((idx) =>
+        {Object.keys(new Int8Array(20)).map(Number).map(idx => (
           <Item key={idx} itemNumber={idx + ((this.props.batchNumber - 1) * 20)} />
-        )}
+        ))}
       </div>
     );
   }
@@ -127,6 +126,7 @@ class Item extends React.Component {
     this.state = {
       iState: 'normal',
       focus: false,
+      focusFrom: undefined,
     };
   }
 
@@ -146,7 +146,6 @@ class Item extends React.Component {
       <Interactive
         as="div"
         onStateChange={this.handleOnStateChange}
-        tabIndex="0"
         {...s.item}
         focus={{ focusFromTabStyle: s.item.focus }}
       >

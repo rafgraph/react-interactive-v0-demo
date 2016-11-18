@@ -28,7 +28,6 @@ s.item = {
   style: {
     marginLeft: '1px',
     cursor: 'pointer',
-    maxWidth: '300px',
   },
   ...s.iStyles,
 };
