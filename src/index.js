@@ -9,7 +9,7 @@ ReactDOM.render(
     React.createElement(Route, {
       path: '*',
       onEnter: (nextState, replace) => replace({ pathname: '/' }),
-    })
+    }),
   ),
-  document.getElementById('root')
+  document.getElementById('root'),
 );
