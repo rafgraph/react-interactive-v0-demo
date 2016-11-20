@@ -1,4 +1,3 @@
-/* eslint import/no-extraneous-dependencies: ["error", {"devDependencies": true}] */
 import webpack from 'webpack';
 
 export default {
