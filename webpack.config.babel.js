@@ -1,8 +1,7 @@
 import webpack from 'webpack';
 
 export default {
-  context: __dirname,
-  entry: './src/index.js',
+  entry: `${__dirname}/src/index.js`,
   output: {
     path: `${__dirname}/build`,
     publicPath: '/build/',
