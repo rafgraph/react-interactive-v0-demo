@@ -12,12 +12,6 @@ class ConsoleLogExample extends React.Component {
       focusFrom: undefined,
     };
   }
-  handleEnterState = (state, focusFrom) => {
-    console.log('onEnter:', state, focusFrom || '');
-  }
-  handleLeaveState = (state, focusFrom) => {
-    console.log('onLeave:', state, focusFrom || '');
-  }
   handleOnStateChange = (changes) => {
     changes.event.persist();
     console.log('onStateChange:', changes);
@@ -27,24 +21,9 @@ class ConsoleLogExample extends React.Component {
     console.log('setStateCallback:', changes);
     console.log('');
   }
-  handleClick = (e) => {
+  handleClick = (e, clickType) => {
     e.persist();
-    console.log('onCick:', e);
-    console.log('');
-  }
-  handleMouseClick = (e) => {
-    e.persist();
-    console.log('onMouseClick:', e);
-    console.log('');
-  }
-  handleEnterKey = (e) => {
-    e.persist();
-    console.log('onEnterKey:', e);
-    console.log('');
-  }
-  handleTap = (e) => {
-    e.persist();
-    console.log('onTap:', e);
+    console.log('onCick:', clickType, e);
     console.log('');
   }
   render() {
@@ -67,45 +46,30 @@ class ConsoleLogExample extends React.Component {
           normal={{
             style: s.button.normal,
             className: 'normal-state',
-            onEnter: this.handleEnterState,
-            onLeave: this.handleLeaveState,
           }}
           hover={{
             style: s.button.hover,
             className: 'hover-state',
-            onEnter: this.handleEnterState,
-            onLeave: this.handleLeaveState,
           }}
           hoverActive={{
             style: s.button.hoverActive,
             className: 'hover-active-state',
-            onEnter: this.handleEnterState,
-            onLeave: this.handleLeaveState,
           }}
           touchActive={{
             style: s.button.touchActive,
             className: 'touch-active-state',
-            onEnter: this.handleEnterState,
-            onLeave: this.handleLeaveState,
           }}
           keyActive={{
             style: s.button.keyActive,
             className: 'key-active-state',
-            onEnter: this.handleEnterState,
-            onLeave: this.handleLeaveState,
           }}
           focus={{
             style: s.button.focus,
             className: 'focus-state',
-            onEnter: this.handleEnterState,
-            onLeave: this.handleLeaveState,
           }}
           onStateChange={this.handleOnStateChange}
           setStateCallback={this.handleSetStateCallback}
           onClick={this.handleClick}
-          onMouseClick={this.handleMouseClick}
-          onEnterKey={this.handleEnterKey}
-          onTap={this.handleTap}
         >
           {s.code('console.log(...)')}
         </Interactive>

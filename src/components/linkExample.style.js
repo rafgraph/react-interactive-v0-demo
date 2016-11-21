@@ -15,15 +15,14 @@ s.link = {
     padding: '2px',
   },
   focus: {
-    style: {
+    focusFromTabStyle: {
       ...s.iStyles.focus,
       outlineOffset: '-1px',
     },
-    focusFromOnly: 'tab',
   },
 };
 
-s.code = (content) => (
+s.code = content => (
   Object.getPrototypeOf(s).code(content, {
     textDecoration: 'none',
   })

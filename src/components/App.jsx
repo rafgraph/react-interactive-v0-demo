@@ -9,6 +9,7 @@ import ConsoleLogExample from './ConsoleLogExample';
 import ShowOnExample from './ShowOnExample';
 import TabThroughPage from './TabThroughPage';
 import StressTest from './StressTest';
+import TouchActiveTapOnly from './TouchActiveTapOnly';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         // active={s.link.active}
         // touchActive={s.link.touchActive}
         // style={s.link.style}
+        touchActiveTapOnly
       >https://github.com/rafrex/react-interactive</Interactive></div>
 
       <LinkExample />
@@ -31,6 +33,7 @@ function App() {
       <StateLogExample />
       <ShowOnExample />
       <TabThroughPage />
+      <TouchActiveTapOnly />
       <ConsoleLogExample />
       <StressTest />
 
@@ -39,6 +42,7 @@ function App() {
           as="a"
           href="http://www.rafaelpedicini.com/"
           {...s.link}
+          touchActiveTapOnly
         >Rafael Pedicini</Interactive>
       </div>
     </div>

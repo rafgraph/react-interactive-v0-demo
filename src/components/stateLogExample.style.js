@@ -54,7 +54,7 @@ s.changeStateLine = {
   fontSize: '14px',
 };
 
-s.codeWithSize = (content) => (
+s.codeWithSize = content => (
   Object.getPrototypeOf(s).code(content, {
     fontSize: '16px',
   })
@@ -72,8 +72,7 @@ s.toggleLogLink = {
     color: 'gray',
   },
   focus: {
-    focusFromOnly: 'tab',
-    style: {
+    focusFromTabStyle: {
       ...s.button.focus,
       outlineOffset: '-3px',
       color: 'black',

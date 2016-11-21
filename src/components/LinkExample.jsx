@@ -20,6 +20,7 @@ function LinkExample() {
           href="#"
           // href="http://react-interactive.rafrex.com/"
           {...s.link}
+          touchActiveTapOnly
         >Anchor tag link &ndash; {s.code('as="a" href="#"')}
         </Interactive>
       </div>
@@ -29,6 +30,7 @@ function LinkExample() {
           as={Link}
           to="/"
           {...s.link}
+          touchActiveTapOnly
         >React Router Link &ndash; {s.code('as={Link} to="/"')}
         </Interactive>
       </div>

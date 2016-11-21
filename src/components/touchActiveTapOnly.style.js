@@ -1,14 +1,18 @@
 import style from '../styles/section.style';
+import button from '../styles/button.style';
 
 const s = Object.create(style);
-
+s.button = {
+  style: { ...button.style, ...button.normal },
+  touchActive: { ...button.touchActive },
+};
 s.title = {
   ...s.title,
   marginBottom: '7px',
 };
-
 s.list = {
   listStyle: 'none',
+  marginBottom: '10px',
 };
 
 s.listItem = {
@@ -16,12 +20,5 @@ s.listItem = {
   textIndent: '-14px',
   margin: '0 0 5px',
 };
-
-s.code = (contents, tb12) => (
-  Object.getPrototypeOf(s).code(
-    tb12 ? 'Tom Brady' : contents,
-    tb12 && { color: 'lightblue' },
-  )
-);
 
 export default s;
