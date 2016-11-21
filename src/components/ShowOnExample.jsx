@@ -37,7 +37,7 @@ class ShowOnExample extends React.Component {
           as="span"
           {...s.infoButton}
           onStateChange={this.handleStateChange}
-          checkDOMChildren
+          nonContainedChild
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
