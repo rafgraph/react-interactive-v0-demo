@@ -14,11 +14,9 @@ s.link = {
     textDecoration: 'underline',
     padding: '2px',
   },
-  focus: {
-    focusFromTabStyle: {
-      ...s.iStyles.focus,
-      outlineOffset: '-1px',
-    },
+  focusFromTab: {
+    ...s.iStyles.focusFromTab,
+    outlineOffset: '-1px',
   },
 };
 

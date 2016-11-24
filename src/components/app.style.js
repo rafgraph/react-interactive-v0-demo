@@ -38,11 +38,7 @@ s.link = {
     borderBottom: '1px dashed rgb(0, 168, 0)',
     color: 'black',
   },
-  focus: {
-    focusFromTabStyle: {
-      ...s.iStyles.focus,
-    },
-  },
+  focusFromTab: s.iStyles.focusFromTab,
 };
 
 s.repoLink = {

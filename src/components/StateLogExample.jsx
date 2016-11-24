@@ -18,7 +18,6 @@ class StateLogExample extends React.Component {
     this.state = {
       iState: 'normal',
       focus: false,
-      focusFrom: undefined,
       log: [],
       showLog: false,
     };
@@ -43,7 +42,7 @@ class StateLogExample extends React.Component {
           changes.push(StateLogExample.createEnterLeaveStateLine(
             nextState.focus ? 'Enter' : 'Leave',
             'focus',
-            nextState.focus ? nextState.focusFrom : prevState.focusFrom,
+            nextState.focus ? nextState.focus : prevState.focus,
           ));
         }
         return changes;
@@ -116,7 +115,7 @@ class StateLogExample extends React.Component {
               {s.code('focus')}
               <span style={s.focusFrom}>
                 {' from '}
-                {s.code(this.state.focusFrom)}
+                {s.code(this.state.focus)}
               </span>
             </span>
           )}
@@ -127,8 +126,8 @@ class StateLogExample extends React.Component {
             style={s.logStyle}
             touchActive={{}} // so RI will turn off webkitTapHighlightColor
             refDOMNode={this.handleLogRef}
-            focus={{ focusFromTabStyle: s.button.focus }}
-            initialState={{ focus: this.focusLog }}
+            focusFromTab={s.button.focus}
+            initialState={{ focus: this.focusLog ? 'tab' : false }}
           >
             {
               this.state.log.map((logItem, idx, log) => {

@@ -9,7 +9,6 @@ class ConsoleLogExample extends React.Component {
     this.state = {
       iState: 'normal',
       focus: false,
-      focusFrom: undefined,
     };
   }
   handleOnStateChange = (changes) => {
@@ -32,9 +31,8 @@ class ConsoleLogExample extends React.Component {
         <h2 style={s.title}>The Logger</h2>
         {
           // show info on hover, active (except keyActive), and focus from tab or touch
-          (/hover/.test(this.state.iState) ||
-          (/Active/.test(this.state.iState) && this.state.iState !== 'keyActive') ||
-          this.state.focusFrom === 'tab' || this.state.focusFrom === 'touch') &&
+          (/hover/.test(this.state.iState) || this.state.iState === 'touchActive' ||
+          this.state.focus === 'tab' || this.state.focus === 'touch') &&
             <span style={s.info}> &ndash; check the{' '}
               {s.code('console')}
             </span>
@@ -65,7 +63,7 @@ class ConsoleLogExample extends React.Component {
           }}
           focus={{
             style: s.button.focus,
-            className: 'focus-state',
+            className: `focus-from-${this.state.focus}`,
           }}
           onStateChange={this.handleOnStateChange}
           setStateCallback={this.handleSetStateCallback}

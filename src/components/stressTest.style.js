@@ -17,11 +17,6 @@ s.create500Items = {
   normal: {
     color: 'rgb(128, 128,128)',
   },
-  focus: {
-    focusFromTabStyle: {
-      ...s.iStyles.focus,
-    },
-  },
 };
 
 s.item = {
