@@ -39,8 +39,8 @@ const button = {
     borderColor: style.iStyles.keyActive.color,
   },
   focus: {
-    ...style.iStyles.focus,
     outline: '3px solid lightblue',
+    outlineOffset: '1px',
   },
 };
 

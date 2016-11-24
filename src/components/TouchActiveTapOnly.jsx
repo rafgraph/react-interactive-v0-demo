@@ -28,6 +28,7 @@ class TouchActiveTapOnly extends React.Component {
           {...s.button}
           touchActiveTapOnly
           tabIndex={null}
+          role={null}
           useBrowserCursor
           onClick={this.handleClick}
         >

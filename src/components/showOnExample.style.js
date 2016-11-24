@@ -33,11 +33,9 @@ s.infoButton = {
     userSelect: 'none',
   },
   hover: { fill: 'black' },
-  hoverActive: { fill: 'black' },
-  touchActive: { fill: 'black' },
-  focus: {
-    focusFromTabStyle: { fill: 'black' },
-  },
+  hoverActive: 'hover',
+  touchActive: 'hover',
+  focusFromTab: 'hover',
 };
 
 s.svg = {

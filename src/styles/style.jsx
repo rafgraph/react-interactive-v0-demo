@@ -11,9 +11,9 @@ export default {
     hoverActive: { color: 'red' },
     touchActive: { color: 'blue' },
     keyActive: { color: 'orange' },
-    focus: {
+    focusFromTab: {
       outline: '2px solid rgb(0, 152, 0)',
-      outlineOffset: '1px',
+      outlineOffset: '2px',
     },
   },
   code: (content, style) => (

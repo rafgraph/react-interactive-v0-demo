@@ -11,9 +11,8 @@ class ShowOnExample extends React.Component {
     };
   }
   handleStateChange = ({ nextState }) => {
-    if (/hover/.test(nextState.iState) ||
-    /Active/.test(nextState.iState) ||
-    nextState.focusFrom === 'tab') {
+    if (/hover/.test(nextState.iState) || nextState.iState === 'touchActive' ||
+    nextState.focus === 'tab') {
       this.setState({ showInfo: true });
     } else {
       this.setState({ showInfo: false });

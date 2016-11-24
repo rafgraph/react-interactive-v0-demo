@@ -126,7 +126,6 @@ class Item extends React.Component {
     this.state = {
       iState: 'normal',
       focus: false,
-      focusFrom: undefined,
     };
   }
 
@@ -147,7 +146,6 @@ class Item extends React.Component {
         as="div"
         onStateChange={this.handleOnStateChange}
         {...s.item}
-        focus={{ focusFromTabStyle: s.item.focus }}
       >
         <div>
           {s.code('div')} number {this.props.itemNumber + 1}
