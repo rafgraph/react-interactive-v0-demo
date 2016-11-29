@@ -144,21 +144,18 @@ class Item extends React.Component {
     return (
       <Interactive
         as="div"
+        interactiveChild
         onStateChange={this.handleOnStateChange}
         {...s.item}
       >
         <div>
           {s.code('div')} number {this.props.itemNumber + 1}
-          {this.state.iState !== 'normal' &&
-            <span> &ndash; {s.code(this.state.iState)}</span>
-          }
+          <span showOnParent="hover active"> &ndash; {s.code(this.state.iState)}</span>
         </div>
-        {this.state.focus &&
-          <div style={s.showOnFocus}>
-            &ndash; {this.numberMapping[this.props.itemNumber + 1] ||
-            `Some ${this.props.itemNumber + 1} stuff shown on focus`}
-          </div>
-        }
+        <div showOnParent="focus" style={s.showOnFocus}>
+          &ndash; {this.numberMapping[this.props.itemNumber + 1] ||
+          `Some ${this.props.itemNumber + 1} stuff shown on focus`}
+        </div>
       </Interactive>
     );
   }
