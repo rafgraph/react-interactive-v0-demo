@@ -10,6 +10,7 @@ import ShowOnExample from './ShowOnExample';
 import TabThroughPage from './TabThroughPage';
 import StressTest from './StressTest';
 import TouchActiveTapOnly from './TouchActiveTapOnly';
+import InteractiveChild from './InteractiveChild';
 
 function App() {
   return (
@@ -32,19 +33,26 @@ function App() {
       <InputExample />
       <StateLogExample />
       <ShowOnExample />
+      <InteractiveChild />
       <TabThroughPage />
       <TouchActiveTapOnly />
       <ConsoleLogExample />
       <StressTest />
 
-      <div style={s.creditLine}>{'Code and concept by '}
-        <Interactive
-          as="a"
-          href="http://www.rafaelpedicini.com/"
-          {...s.link}
-          touchActiveTapOnly
-        >Rafael Pedicini</Interactive>
-      </div>
+      <Interactive
+        as="a"
+        href="http://www.rafaelpedicini.com/"
+        interactiveChild
+        touchActiveTapOnly
+        focus={{}}
+        touchActive={{}}
+        style={s.creditLine}
+      >
+        {'Code and concept by '}
+        <span {...s.childLink}>
+          Rafael Pedicini
+        </span>
+      </Interactive>
     </div>
   );
 }

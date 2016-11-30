@@ -1,10 +1,6 @@
 import React from 'react';
 
 export default {
-  link: {
-    msTouchAction: 'manipulation',
-    touchAction: 'manipulation',
-  },
   iStyles: {
     normal: { color: 'black' },
     hover: { color: 'green' },
