@@ -21,7 +21,6 @@ s.title = {
 };
 
 s.creditLine = {
-  ...s.link, // same as ...Object.getPrototypeOf(s).link,
   fontSize: '14px',
   color: 'rgb(128, 128, 128)',
   margin: '20px 0 0 1px',
@@ -29,7 +28,6 @@ s.creditLine = {
 
 s.link = {
   style: {
-    ...s.link, // same as ...Object.getPrototypeOf(s).link,
     fontSize: '14px',
   },
   normal: {

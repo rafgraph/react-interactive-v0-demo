@@ -10,7 +10,6 @@ s.subTitle = {
 s.link = {
   ...s.iStyles,
   style: {
-    ...s.link,
     textDecoration: 'underline',
     padding: '2px',
   },
