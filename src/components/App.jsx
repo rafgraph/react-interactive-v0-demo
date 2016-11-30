@@ -37,14 +37,20 @@ function App() {
       <ConsoleLogExample />
       <StressTest />
 
-      <div style={s.creditLine}>{'Code and concept by '}
-        <Interactive
-          as="a"
-          href="http://www.rafaelpedicini.com/"
-          {...s.link}
-          touchActiveTapOnly
-        >Rafael Pedicini</Interactive>
-      </div>
+      <Interactive
+        as="a"
+        href="http://www.rafaelpedicini.com/"
+        interactiveChild
+        touchActiveTapOnly
+        focus={{}}
+        touchActive={{}}
+        style={s.creditLine}
+      >
+        {'Code and concept by '}
+        <span {...s.childLink}>
+          Rafael Pedicini
+        </span>
+      </Interactive>
     </div>
   );
 }

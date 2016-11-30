@@ -20,6 +20,13 @@ s.title = {
   fontSize: '24px',
 };
 
+s.creditLine = {
+  ...s.link, // same as ...Object.getPrototypeOf(s).link,
+  fontSize: '14px',
+  color: 'rgb(128, 128, 128)',
+  margin: '20px 0 0 1px',
+};
+
 s.link = {
   style: {
     ...s.link, // same as ...Object.getPrototypeOf(s).link,
@@ -41,14 +48,16 @@ s.link = {
   focusFromTab: s.iStyles.focusFromTab,
 };
 
-s.repoLink = {
-  margin: '-1px 1px 25px',
+s.childLink = {
+  onParentNormal: s.link.normal,
+  onParentHover: s.link.hover,
+  onParentActive: s.link.active,
+  onParentTouchActive: s.link.touchActive,
+  onParentFocusFromTab: s.link.focusFromTab,
 };
 
-s.creditLine = {
-  fontSize: '14px',
-  color: 'rgb(128, 128, 128)',
-  margin: '20px 0 0 1px',
+s.repoLink = {
+  margin: '-1px 1px 25px',
 };
 
 export default s;
