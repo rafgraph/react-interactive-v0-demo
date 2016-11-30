@@ -1,5 +1,5 @@
 import React from 'react';
-import Interactive from '../../../react-interactive-component/src/index';
+import Interactive from 'react-interactive';
 import s from './interactiveChild.style';
 
 function InteractiveChild() {
