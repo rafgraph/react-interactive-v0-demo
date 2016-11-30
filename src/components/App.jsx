@@ -10,6 +10,7 @@ import ShowOnExample from './ShowOnExample';
 import TabThroughPage from './TabThroughPage';
 import StressTest from './StressTest';
 import TouchActiveTapOnly from './TouchActiveTapOnly';
+import InteractiveChild from './InteractiveChild';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
       <InputExample />
       <StateLogExample />
       <ShowOnExample />
+      <InteractiveChild />
       <TabThroughPage />
       <TouchActiveTapOnly />
       <ConsoleLogExample />
