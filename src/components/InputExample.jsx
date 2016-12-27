@@ -41,7 +41,7 @@ class TextInput extends React.Component {
           touchActiveTapOnly
         />
         {this.state.focus &&
-          <span style={s.focusInstructions}>This has foucs for typing</span>
+          <span style={s.focusInstructions}>This has focus for typing</span>
         }
       </div>
     );
