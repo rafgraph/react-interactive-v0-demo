@@ -25,7 +25,10 @@ s.interactiveChild = {
     ...s.iStyles.normal,
   },
   onParentHover: {
-    ...s.iStyles.hover,
+    style: {
+      ...s.iStyles.hover,
+    },
+    className: 'interactive-child-hover-class',
   },
   onParentHoverActive: {
     ...s.iStyles.hoverActive,
