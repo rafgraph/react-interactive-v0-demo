@@ -11,11 +11,14 @@ s.link = {
   ...s.iStyles,
   style: {
     textDecoration: 'underline',
-    padding: '2px',
+    padding: '3px 4px 2px',
+    border: '1px solid transparent',
   },
   focusFromTab: {
-    ...s.iStyles.focusFromTab,
-    outlineOffset: '-1px',
+    border: '1px solid black',
+    borderRadius: '3px',
+    textDecoration: 'none',
+    backgroundColor: 'rgba(255, 153, 0, 0.2)',
   },
 };
 
@@ -25,6 +28,6 @@ s.code = content => (
   })
 );
 
-s.linkWrapper = { margin: '4px 0' };
+s.linkWrapper = { margin: '6px 0 0 -2px' };
 
 export default s;
