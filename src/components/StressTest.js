@@ -1,5 +1,6 @@
 /* eslint react/no-multi-comp: "off" */
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import Interactive from 'react-interactive';
 import s from '../styles/stressTest.style';
 
