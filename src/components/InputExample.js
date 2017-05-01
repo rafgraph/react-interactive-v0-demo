@@ -1,6 +1,6 @@
 import React from 'react';
 import Interactive from 'react-interactive';
-import s from './inputExample.style';
+import s from '../styles/inputExample.style';
 
 function InputExample() {
   return (

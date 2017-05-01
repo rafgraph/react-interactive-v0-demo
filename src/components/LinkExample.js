@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import Interactive from 'react-interactive';
-import s from './linkExample.style';
+import s from '../styles/linkExample.style';
 
 function LinkExample() {
   return (

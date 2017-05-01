@@ -1,5 +1,5 @@
 import React from 'react';
-import s from './tabThroughPage.style';
+import s from '../styles/tabThroughPage.style';
 
 function TabThroughPage() {
   const tb12 = (Math.floor(Math.random() * 199) + 1) === 199;

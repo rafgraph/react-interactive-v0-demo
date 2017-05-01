@@ -1,6 +1,6 @@
 import React from 'react';
 import Interactive from 'react-interactive';
-import s from './app.style';
+import s from '../styles/app.style';
 
 import LinkExample from './LinkExample';
 import InputExample from './InputExample';

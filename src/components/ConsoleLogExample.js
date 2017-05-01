@@ -1,7 +1,7 @@
 /* eslint no-console: "off" */
 import React from 'react';
 import Interactive from 'react-interactive';
-import s from './consoleLogExample.style';
+import s from '../styles/consoleLogExample.style';
 
 class ConsoleLogExample extends React.Component {
   constructor() {

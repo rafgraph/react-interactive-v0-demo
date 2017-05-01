@@ -1,7 +1,7 @@
 /* eslint react/no-multi-comp: "off" */
 import React, { PropTypes } from 'react';
 import Interactive from 'react-interactive';
-import s from './stressTest.style';
+import s from '../styles/stressTest.style';
 
 class StressTest extends React.Component {
   constructor() {

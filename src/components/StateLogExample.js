@@ -1,6 +1,6 @@
 import React from 'react';
 import Interactive from 'react-interactive';
-import s from './stateLogExample.style';
+import s from '../styles/stateLogExample.style';
 
 class StateLogExample extends React.Component {
   static createEnterLeaveStateLine(transition, state, focusFrom) {

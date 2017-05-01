@@ -1,6 +1,6 @@
 import React from 'react';
 import Interactive from 'react-interactive';
-import s from './touchActiveTapOnly.style';
+import s from '../styles/touchActiveTapOnly.style';
 
 class TouchActiveTapOnly extends React.Component {
   constructor() {

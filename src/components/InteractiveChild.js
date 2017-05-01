@@ -1,6 +1,6 @@
 import React from 'react';
 import Interactive from 'react-interactive';
-import s from './interactiveChild.style';
+import s from '../styles/interactiveChild.style';
 
 function InteractiveChild() {
   return (
