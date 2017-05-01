@@ -9,6 +9,21 @@ s.title = {
   marginBottom: '11px',
 };
 
+s.buttonCover = {
+  position: 'relative',
+  width: '100%',
+  height: '100%',
+  zIndex: '2',
+};
+
+s.buttonTextWrapper = {
+  position: 'absolute',
+  width: '338px',
+  height: '40px',
+  margin: '-40px 0px',
+  zIndex: '1',
+};
+
 s.focusFrom = {
   fontSize: '12px',
 };

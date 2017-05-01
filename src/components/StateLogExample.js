@@ -108,17 +108,24 @@ class StateLogExample extends React.Component {
           onClick={this.handleClick}
           onTapTwo={this.handleTapTwo}
         >
-          {s.code(this.state.iState)}
-          {this.state.focus && (
-            <span>
-              <span style={s.withFocus}> with </span>
-              {s.code('focus')}
-              <span style={s.focusFrom}>
-                {' from '}
-                {s.code(this.state.focus)}
+          <div
+            style={s.buttonCover}
+            // required so clicks fall on this div and not the button text which changes
+            // if the click lands on an element that is then removed from the DOM it will be dropped
+          />
+          <div style={s.buttonTextWrapper}>
+            {s.code(this.state.iState)}
+            {this.state.focus && (
+              <span>
+                <span style={s.withFocus}> with </span>
+                {s.code('focus')}
+                <span style={s.focusFrom}>
+                  {' from '}
+                  {s.code(this.state.focus)}
+                </span>
               </span>
-            </span>
-          )}
+            )}
+          </div>
         </Interactive>
         {this.state.showLog &&
           <Interactive
