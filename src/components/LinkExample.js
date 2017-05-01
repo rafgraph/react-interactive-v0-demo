@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { BrowserRouter, Link } from 'react-router-dom';
 import Interactive from 'react-interactive';
 import s from '../styles/linkExample.style';
 
@@ -26,13 +26,15 @@ function LinkExample() {
       </div>
 
       <div style={s.linkWrapper}>
-        <Interactive
-          as={Link}
-          to="/"
-          {...s.link}
-          touchActiveTapOnly
-        >React Router Link &ndash; {s.code('as={Link} to="/"')}
-        </Interactive>
+        <BrowserRouter>
+          <Interactive
+            as={Link}
+            to="/"
+            {...s.link}
+            touchActiveTapOnly
+          >React Router Link &ndash; {s.code('as={Link} to="/"')}
+          </Interactive>
+        </BrowserRouter>
       </div>
     </div>
   );
