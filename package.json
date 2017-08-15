@@ -2,9 +2,10 @@
   "name": "react-interactive-examples",
   "description": "Example for React Interactive component",
   "scripts": {
-    "start-local": "npm link react-interactive && npm start",
+    "start-local": "yarn link react-interactive && yarn start",
     "start": "webpack-dev-server --devtool eval-source-map --host 0.0.0.0 --public 10.0.1.4:8080 --history-api-fallback --open",
-    "build": "npm unlink react-interactive && npm install --save react-interactive && webpack -p"
+    "unlink-dev": "yarn unlink react-interactive && yarn add react-interactive",
+    "build": "yarn unlink-dev && webpack -p"
   },
   "repository": {
     "type": "git",
