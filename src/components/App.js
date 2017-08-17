@@ -17,18 +17,22 @@ function App() {
   return (
     <div style={s.root}>
       <h1 style={s.title}>React Interactive</h1>
-      <div style={s.repoLink}><Interactive
-        as="a"
-        href="https://github.com/rafrex/react-interactive"
-        // use the spread operator to add state styles - equivalent to commented code below
-        {...s.link}
-        // normal={s.link.normal}
-        // hover={s.link.hover}
-        // active={s.link.active}
-        // touchActive={s.link.touchActive}
-        // style={s.link.style}
-        touchActiveTapOnly
-      >https://github.com/rafrex/react-interactive</Interactive></div>
+      <div style={s.repoLink}>
+        <Interactive
+          as="a"
+          href="https://github.com/rafrex/react-interactive"
+          // use the spread operator to add state styles - equivalent to commented code below
+          {...s.link}
+          // normal={s.link.normal}
+          // hover={s.link.hover}
+          // active={s.link.active}
+          // touchActive={s.link.touchActive}
+          // style={s.link.style}
+          touchActiveTapOnly
+        >
+          https://github.com/rafrex/react-interactive
+        </Interactive>
+      </div>
 
       <LinkExample />
       <InputExample />
@@ -51,9 +55,7 @@ function App() {
         style={s.creditLine}
       >
         {'Code and concept by '}
-        <span {...s.childLink}>
-          Rafael Pedicini
-        </span>
+        <span {...s.childLink}>Rafael Pedicini</span>
       </Interactive>
     </div>
   );

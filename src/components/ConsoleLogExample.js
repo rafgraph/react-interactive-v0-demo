@@ -11,32 +11,32 @@ class ConsoleLogExample extends React.Component {
       focus: false,
     };
   }
-  handleOnStateChange = (changes) => {
+  handleOnStateChange = changes => {
     changes.event.persist();
     console.log('onStateChange:', changes);
     this.setState(changes.nextState);
-  }
-  handleSetStateCallback = (changes) => {
+  };
+  handleSetStateCallback = changes => {
     console.log('setStateCallback:', changes);
     console.log('');
-  }
+  };
   handleClick = (e, clickType) => {
     e.persist();
     console.log('onCick:', clickType, e);
     console.log('');
-  }
+  };
   render() {
     return (
       <div style={s.root}>
         <h2 style={s.title}>The Logger</h2>
-        {
-          // show info on hover, active (except keyActive), and focus from tab or touch
-          (/hover/.test(this.state.iState) || this.state.iState === 'touchActive' ||
-          this.state.focus === 'tab' || this.state.focus === 'touch') &&
-            <span style={s.info}> &ndash; check the{' '}
-              {s.code('console')}
-            </span>
-        }
+        {// show info on hover, active (except keyActive), and focus from tab or touch
+        (/hover/.test(this.state.iState) ||
+          this.state.iState === 'touchActive' ||
+          this.state.focus === 'tab' ||
+          this.state.focus === 'touch') &&
+          <span style={s.info}>
+            {' '}&ndash; check the {s.code('console')}
+          </span>}
         <Interactive
           as="div"
           style={s.button.style}
@@ -71,7 +71,6 @@ class ConsoleLogExample extends React.Component {
         >
           {s.code('console.log(...)')}
         </Interactive>
-
       </div>
     );
   }

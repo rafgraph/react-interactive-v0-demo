@@ -8,10 +8,18 @@ function LinkExample() {
     <div style={s.root}>
       <h2 style={s.title}>Links</h2>
       <div style={s.subTitle}>
-        <div>{s.code('hover')} is green</div>
-        <div>{s.code('hoverActive')} is red</div>
-        <div>{s.code('touchActive')} is blue</div>
-        <div>{s.code('keyActive')} is orange</div>
+        <div>
+          {s.code('hover')} is green
+        </div>
+        <div>
+          {s.code('hoverActive')} is red
+        </div>
+        <div>
+          {s.code('touchActive')} is blue
+        </div>
+        <div>
+          {s.code('keyActive')} is orange
+        </div>
       </div>
 
       <div style={s.linkWrapper}>
@@ -21,18 +29,15 @@ function LinkExample() {
           // href="http://react-interactive.rafrex.com/"
           {...s.link}
           touchActiveTapOnly
-        >Anchor tag link &ndash; {s.code('as="a" href="#"')}
+        >
+          Anchor tag link &ndash; {s.code('as="a" href="#"')}
         </Interactive>
       </div>
 
       <div style={s.linkWrapper}>
         <BrowserRouter>
-          <Interactive
-            as={Link}
-            to="/"
-            {...s.link}
-            touchActiveTapOnly
-          >React Router Link &ndash; {s.code('as={Link} to="/"')}
+          <Interactive as={Link} to="/" {...s.link} touchActiveTapOnly>
+            React Router Link &ndash; {s.code('as={Link} to="/"')}
           </Interactive>
         </BrowserRouter>
       </div>

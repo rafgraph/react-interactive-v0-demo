@@ -11,7 +11,6 @@ function InputExample() {
   );
 }
 
-
 class TextInput extends React.Component {
   constructor() {
     super();
@@ -22,11 +21,12 @@ class TextInput extends React.Component {
   }
 
   handleOnStateChange = ({ nextState }) => {
-    if (this.state.focus !== nextState.focus) this.setState({ focus: nextState.focus });
-  }
-  handleChange = (e) => {
+    if (this.state.focus !== nextState.focus)
+      this.setState({ focus: nextState.focus });
+  };
+  handleChange = e => {
     this.setState({ value: e.target.value });
-  }
+  };
 
   render() {
     return (
@@ -41,8 +41,7 @@ class TextInput extends React.Component {
           touchActiveTapOnly
         />
         {this.state.focus &&
-          <span style={s.focusInstructions}>This has focus for typing</span>
-        }
+          <span style={s.focusInstructions}>This has focus for typing</span>}
       </div>
     );
   }

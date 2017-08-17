@@ -14,13 +14,13 @@ class StressTest extends React.Component {
     this.maxBatches = 25;
   }
 
-  toggleStressTest = (cb) => {
+  toggleStressTest = cb => {
     if (this.state.showStressTest) {
       this.setState({ showStressTest: false, batches: 0 }, cb);
     } else {
       this.batch(cb);
     }
-  }
+  };
 
   batch(cb) {
     // batch asychrounsly so the creation of 500 divs is non-blocking and
@@ -29,7 +29,9 @@ class StressTest extends React.Component {
     setTimeout(() => {
       this.setState(
         { showStressTest: true, batches: this.state.batches + 1 },
-        () => { this.state.batches === this.maxBatches ? cb() : this.batch(cb); },
+        () => {
+          this.state.batches === this.maxBatches ? cb() : this.batch(cb);
+        },
       );
     }, 0);
   }
@@ -37,28 +39,25 @@ class StressTest extends React.Component {
   render() {
     return (
       <div style={s.root}>
-        <h2 style={s.title}>Stress Test</h2>
-        {' '}&ndash;{' '}
+        <h2 style={s.title}>Stress Test</h2> &ndash;{' '}
         <ToggleTest
           testShown={this.state.batches === this.maxBatches}
           toggleStressTest={this.toggleStressTest}
         />
         {this.state.showStressTest &&
-          Object.keys(new Int8Array(this.state.batches)).map(Number).map(idx => (
-            <Batch key={idx} batchNumber={idx + 1} />
-          ))
-        }
+          Object.keys(new Int8Array(this.state.batches))
+            .map(Number)
+            .map(idx => <Batch key={idx} batchNumber={idx + 1} />)}
       </div>
     );
   }
 }
 
-
 class ToggleTest extends React.Component {
   static propTypes = {
     toggleStressTest: PropTypes.func,
     testShown: PropTypes.bool,
-  }
+  };
   constructor() {
     super();
     this.state = {
@@ -72,14 +71,11 @@ class ToggleTest extends React.Component {
         this.setState({ loading: false });
       });
     });
-  }
+  };
 
   render() {
     const toggleItems = (
-      <span
-        onClick={this.toggleStressTest}
-        {...s.create500Items}
-      >
+      <span onClick={this.toggleStressTest} {...s.create500Items}>
         {this.props.testShown ? 'remove' : 'create'} 500 Interactive divs
       </span>
     );
@@ -87,7 +83,9 @@ class ToggleTest extends React.Component {
       <span
         style={s.loading}
         focus={{}} // add blank focus prop so RI treats it as focusable
-      >{'rendering...'}</span>
+      >
+        {'rendering...'}
+      </span>
     );
     return (
       <Interactive
@@ -98,30 +96,33 @@ class ToggleTest extends React.Component {
   }
 }
 
-
 class Batch extends React.Component {
   static propTypes = {
     batchNumber: PropTypes.number,
-  }
+  };
   shouldComponentUpdate() {
     return false;
   }
   render() {
     return (
       <div>
-        {Object.keys(new Int8Array(20)).map(Number).map(idx => (
-          <Item key={idx} itemNumber={idx + ((this.props.batchNumber - 1) * 20)} />
-        ))}
+        {Object.keys(new Int8Array(20))
+          .map(Number)
+          .map(idx =>
+            <Item
+              key={idx}
+              itemNumber={idx + (this.props.batchNumber - 1) * 20}
+            />,
+          )}
       </div>
     );
   }
 }
 
-
 class Item extends React.Component {
   static propTypes = {
     itemNumber: PropTypes.number,
-  }
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -132,14 +133,14 @@ class Item extends React.Component {
 
   handleOnStateChange = ({ nextState }) => {
     this.setState(nextState);
-  }
+  };
 
   numberMapping = {
-    42: 'Todo 42: Read The Hitchhiker\'s Guide to the Galaxy',
+    42: "Todo 42: Read The Hitchhiker's Guide to the Galaxy",
     172: 'Mookie Betts',
     199: 'Tom Brady, Tom... fucking... Brady...',
     232: 'Julian Edelman',
-  }
+  };
 
   render() {
     return (
@@ -151,11 +152,14 @@ class Item extends React.Component {
       >
         <div>
           {s.code('div')} number {this.props.itemNumber + 1}
-          <span showOnParent="hover active"> &ndash; {s.code(this.state.iState)}</span>
+          <span showOnParent="hover active">
+            {' '}&ndash; {s.code(this.state.iState)}
+          </span>
         </div>
         <div showOnParent="focus" style={s.showOnFocus}>
-          &ndash; {this.numberMapping[this.props.itemNumber + 1] ||
-          `Some ${this.props.itemNumber + 1} stuff shown on focus`}
+          &ndash;{' '}
+          {this.numberMapping[this.props.itemNumber + 1] ||
+            `Some ${this.props.itemNumber + 1} stuff shown on focus`}
         </div>
       </Interactive>
     );

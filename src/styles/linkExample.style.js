@@ -22,11 +22,10 @@ s.link = {
   },
 };
 
-s.code = content => (
+s.code = content =>
   Object.getPrototypeOf(s).code(content, {
     textDecoration: 'none',
-  })
-);
+  });
 
 s.linkWrapper = { margin: '6px 0 0 -2px' };
 

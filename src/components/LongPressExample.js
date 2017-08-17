@@ -13,7 +13,10 @@ class LongPressExample extends React.Component {
   }
 
   handleLongPress = () => {
-    this.setState({ longPress: true, longPressCount: this.state.longPressCount + 1 });
+    this.setState({
+      longPress: true,
+      longPressCount: this.state.longPressCount + 1,
+    });
   };
 
   handleOnStateChange = ({ nextState }) => {
@@ -26,13 +29,17 @@ class LongPressExample extends React.Component {
         <h2 style={s.title}>Long Press</h2>
         <ul style={s.list}>
           <li style={s.listItem}>
-            &ndash; {s.code('onLongPress')} callback fires after a 500ms touch (time is
-            configurable).
+            &ndash; {s.code('onLongPress')} callback fires after a 500ms touch
+            (time is configurable).
           </li>
         </ul>
         <Interactive
           as="div"
-          style={objectAssign({}, s.button.style, this.state.longPress ? s.button.longPress : {})}
+          style={objectAssign(
+            {},
+            s.button.style,
+            this.state.longPress ? s.button.longPress : {},
+          )}
           tabIndex={null}
           role={null}
           useBrowserCursor

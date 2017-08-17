@@ -11,11 +11,17 @@ function InteractiveChild() {
       focusFromTab={{}}
       touchActive={{}}
     >
-      <h2 style={s.title}>Interactive <span {...s.interactiveChild}>Child</span></h2>
+      <h2 style={s.title}>
+        Interactive <span {...s.interactiveChild}>Child</span>
+      </h2>
       <ul style={s.list}>
         <li style={s.listItem}>
-          &ndash; Easily style <span {...s.interactiveChild} className="class-always-applied">children</span>{' '}
-          based on the state of the <span {...s.interactiveChild}>Interactive parent.</span>
+          &ndash; Easily style{' '}
+          <span {...s.interactiveChild} className="class-always-applied">
+            children
+          </span>{' '}
+          based on the state of the{' '}
+          <span {...s.interactiveChild}>Interactive parent.</span>
         </li>
         <Interactive
           as="li"
@@ -25,7 +31,8 @@ function InteractiveChild() {
           touchActive={{}}
         >
           &ndash; You can also nest Interactive components and the{' '}
-          <span {...s.interactiveChild}>children</span> are styled based on the state of their{' '}
+          <span {...s.interactiveChild}>children</span> are styled based on the
+          state of their{' '}
           <span {...s.interactiveChild}>closest Interactive parent.</span>
         </Interactive>
       </ul>

@@ -10,8 +10,9 @@ class TouchActiveTapOnly extends React.Component {
     };
   }
   handleClick = (e, clickType) => {
-    if (clickType === 'tapClick') this.setState({ tapCount: this.state.tapCount + 1 });
-  }
+    if (clickType === 'tapClick')
+      this.setState({ tapCount: this.state.tapCount + 1 });
+  };
 
   render() {
     return (
@@ -19,7 +20,8 @@ class TouchActiveTapOnly extends React.Component {
         <h2 style={s.title}>Tap Active</h2>
         <ul style={s.list}>
           <li style={s.listItem}>
-            &ndash; Only in the {s.code('touchActive')} state while a {s.code('tap')} is possible.
+            &ndash; Only in the {s.code('touchActive')} state while a{' '}
+            {s.code('tap')} is possible.
           </li>
         </ul>
         <Interactive
@@ -34,7 +36,6 @@ class TouchActiveTapOnly extends React.Component {
         >
           {s.code('tap')} counter: {s.code(this.state.tapCount)}
         </Interactive>
-
       </div>
     );
   }

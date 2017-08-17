@@ -17,11 +17,10 @@ s.listItem = {
   margin: '0 0 5px',
 };
 
-s.code = (contents, tb12) => (
+s.code = (contents, tb12) =>
   Object.getPrototypeOf(s).code(
     tb12 ? 'Tom Brady' : contents,
     tb12 && { color: 'lightblue' },
-  )
-);
+  );
 
 export default s;

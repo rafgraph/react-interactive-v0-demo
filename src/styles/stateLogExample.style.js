@@ -69,11 +69,10 @@ s.changeStateLine = {
   fontSize: '14px',
 };
 
-s.codeWithSize = content => (
+s.codeWithSize = content =>
   Object.getPrototypeOf(s).code(content, {
     fontSize: '16px',
-  })
-);
+  });
 
 s.toggleLogLink = {
   style: {

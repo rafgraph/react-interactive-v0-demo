@@ -12,12 +12,13 @@ export default {
       outlineOffset: '2px',
     },
   },
-  code: (content, style) => (
+  code: (content, style) =>
     <code
       style={{
         fontFamily: 'monospace',
         ...style,
       }}
-    >{content}</code>
-  ),
+    >
+      {content}
+    </code>,
 };
