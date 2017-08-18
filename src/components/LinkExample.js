@@ -36,7 +36,15 @@ function LinkExample() {
 
       <div style={s.linkWrapper}>
         <BrowserRouter>
-          <Interactive as={Link} to="/" {...s.link} touchActiveTapOnly>
+          <Interactive
+            as={Link}
+            to="/"
+            {...s.link}
+            touchActiveTapOnly
+            // below just to test wrapper props, has no affect on layout
+            wrapperClassName="LinkExmaple-wrapperClassName"
+            wrapperStyle={{ display: 'inline' }}
+          >
             React Router Link &ndash; {s.code('as={Link} to="/"')}
           </Interactive>
         </BrowserRouter>
