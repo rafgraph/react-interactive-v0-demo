@@ -3516,9 +3516,9 @@ react-dom@^15.5.4:
     object-assign "^4.1.0"
     prop-types "^15.5.10"
 
-react-interactive@^0.7.0:
-  version "0.7.0"
-  resolved "https://registry.yarnpkg.com/react-interactive/-/react-interactive-0.7.0.tgz#5c26e37e2b12fd9ad3cbf2eaf314fdacdeb5d9c6"
+react-interactive@^0.8.0:
+  version "0.8.0"
+  resolved "https://registry.yarnpkg.com/react-interactive/-/react-interactive-0.8.0.tgz#1f488043f50108e14830df17553d896aa095805a"
   dependencies:
     detect-it "^3.0.1"
     object-assign "^4.1.1"
