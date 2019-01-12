@@ -3528,9 +3528,10 @@ react-dom@^16.0.0:
     object-assign "^4.1.1"
     prop-types "^15.6.0"
 
-react-interactive@^0.8.1:
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/react-interactive/-/react-interactive-0.8.1.tgz#6e3ba6f3e59378d4381e9104acdce82040241af4"
+react-interactive@^0.8.2:
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/react-interactive/-/react-interactive-0.8.2.tgz#725396e8091a230c0e22fac5ffd076b42f080318"
+  integrity sha512-hWE1EI2Mtqvq0F6SULL5fcOdusRJLwQWLkScdO9rOahjZt/DcgnCiB04GHFw2ByeX8O0zKERJw20qBvSI9cIcQ==
   dependencies:
     detect-it "^3.0.3"
     object-assign "^4.1.1"
