@@ -20,12 +20,6 @@ s.title = {
   fontSize: '24px',
 };
 
-s.creditLine = {
-  fontSize: '14px',
-  color: 'rgb(128, 128, 128)',
-  margin: '20px 0 0 1px',
-};
-
 s.link = {
   style: {
     fontSize: '14px',
@@ -44,14 +38,6 @@ s.link = {
     color: 'black',
   },
   focusFromTab: s.iStyles.focusFromTab,
-};
-
-s.childLink = {
-  onParentNormal: s.link.normal,
-  onParentHover: s.link.hover,
-  onParentActive: s.link.active,
-  onParentTouchActive: s.link.touchActive,
-  onParentFocusFromTab: s.link.focusFromTab,
 };
 
 s.repoLink = {

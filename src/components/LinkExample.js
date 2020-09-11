@@ -26,7 +26,7 @@ function LinkExample() {
         <Interactive
           as="a"
           href="#"
-          // href="http://react-interactive.rafrex.com/"
+          // href="https://react-interactive.rafgraph.dev/"
           {...s.link}
           touchActiveTapOnly
         >

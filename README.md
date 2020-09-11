@@ -1,3 +1,3 @@
-# Example Site for React Interactive
+# Demo Site for React Interactive
 
-http://react-interactive.rafrex.com
+https://react-interactive.rafgraph.dev
