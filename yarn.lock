@@ -4184,10 +4184,10 @@ react-dom@^16.3.0:
     prop-types "^15.6.2"
     scheduler "^0.19.1"
 
-react-interactive@^0.9.4:
-  version "0.9.4"
-  resolved "https://registry.yarnpkg.com/react-interactive/-/react-interactive-0.9.4.tgz#076f993c2b740f2867bca93b67f515e5b13d0346"
-  integrity sha512-oqLZGSuocELs+59mGwW1DdnFPXEa7iejftyqbIhV247TmZswqGKI09Z5VYtJ1gFJMi9V6XE/yhuWbSvaeiW9HQ==
+react-interactive@^0.9.5:
+  version "0.9.5"
+  resolved "https://registry.yarnpkg.com/react-interactive/-/react-interactive-0.9.5.tgz#0582b94e71fd84c9e16aa5bfa67a8ecc9ad750cb"
+  integrity sha512-6c5F3L3JHZ8AAjqwx2wXjADpqPsihiM0tPlCfIcJ8AoIydDf6BCC93B7ieye4GOleKkEVrF48Qdj0q1XghCwxA==
   dependencies:
     detect-it "^4.0.0"
     object-assign "^4.1.1"

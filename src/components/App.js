@@ -16,11 +16,11 @@ import InteractiveChild from './InteractiveChild';
 function App() {
   return (
     <div style={s.root}>
-      <h1 style={s.title}>React Interactive</h1>
+      <h1 style={s.title}>React Interactive v0 Demo</h1>
       <div style={s.repoLink}>
         <Interactive
           as="a"
-          href="https://github.com/rafgraph/react-interactive"
+          href="https://github.com/rafgraph/react-interactive/tree/v0.9.5"
           // use the spread operator to add state styles - equivalent to commented code below
           {...s.link}
           // normal={s.link.normal}
@@ -30,7 +30,7 @@ function App() {
           // style={s.link.style}
           touchActiveTapOnly
         >
-          https://github.com/rafgraph/react-interactive
+          https://github.com/rafgraph/react-interactive/tree/v0.9.5
         </Interactive>
       </div>
 
